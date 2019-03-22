@@ -1,0 +1,22 @@
+{
+  "name": "word_guess_command_line",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/warnerhannah/word_guess_command_line.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/warnerhannah/word_guess_command_line/issues"
+  },
+  "homepage": "https://github.com/warnerhannah/word_guess_command_line#readme",
+  "dependencies": {
+    "inquirer": "^6.2.2"
+  }
+}
