@@ -1,17 +1,11 @@
 const Letter = require("./letter.js")
 
-const word = "hannah"
-
-const wordArray = word.split("");
-
-const letterGuessed = process.argv[2];
-
-function Word(wordArray,) {
+function Word(wordArray, letterGuessed) {
 
     this.arrayofObjects = function() {
         let myWordArray = [];
         for (let i=0;i<wordArray.length;i++){
-            let myWordLetter = new Letter(wordArray[i]);
+            let myWordLetter = new Letter(wordArray[i], letterGuessed);
             myWordArray.push(myWordLetter)
         }
         return myWordArray;
@@ -19,9 +13,9 @@ function Word(wordArray,) {
 
     this.displayWord = function() {
         let myWord = "";
-        console.log(myWord)
+        // console.log(this.arrayofObjects()[0].isCorrect())
         for (let i=0;i<this.arrayofObjects().length;i++) {
-            if (this.arrayofObjects()[i].value) {
+            if (this.arrayofObjects()[i].isCorrect()) {
                 myWord += this.arrayofObjects()[i].character;
             }
             else {
@@ -32,7 +26,4 @@ function Word(wordArray,) {
     }
 };
 
-
-const wordTest = new Word(wordArray);
-
-console.log(wordTest.displayWord());
+module.exports = Word;

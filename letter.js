@@ -1,24 +1,31 @@
 function Letter(character, guessedLetter) {
     this.character = character;
 
-    this.value = false;
+    this.value ;
 
     this.displayCharacter = function () {
         if (guessedLetter === character) {
             return character;
         }
         else {
-            return " ";
+            return "_ ";
         };
     }
 
     this.isCorrect = function () {
-        if (guessedLetter === character) {
-            this.value = true;
+        if (!this.value) {
+            if (guessedLetter === character) {
+                this.value = true;
+                return this.value;
+            }
+            else {
+                this.value = false;
+                return this.value;
+            };
         }
         else {
-            this.value = false;
-        };
+            return this.value
+        }
     }
 }
 
