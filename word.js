@@ -1,26 +1,31 @@
 const Letter = require("./letter.js")
 
-function Word(wordArray, letterGuessed) {
+function Word(word, guess) {
+
+    this.word = word;
+    this.myWordArray = [];
 
     this.arrayofObjects = function() {
-        let myWordArray = [];
+        let wordArray = this.word.split("");
         for (let i=0;i<wordArray.length;i++){
-            let myWordLetter = new Letter(wordArray[i], letterGuessed);
-            myWordArray.push(myWordLetter)
+            let myWordLetter = new Letter(wordArray[i], "x");
+            this.myWordArray.push(myWordLetter)
         }
-        return myWordArray;
+
+    }
+
+    this.checkLetter = function() {
+        for (let i=0;i<this.myWordArray.length;i++) {
+            this.arrayofObjects[i].isCorrect();
+        }
     }
 
     this.displayWord = function() {
+        this.arrayofObjects();
         let myWord = "";
-        // console.log(this.arrayofObjects()[0].isCorrect())
-        for (let i=0;i<this.arrayofObjects().length;i++) {
-            if (this.arrayofObjects()[i].isCorrect()) {
-                myWord += this.arrayofObjects()[i].character;
-            }
-            else {
-                myWord += "_ ";
-            }
+        console.log(this.myWordArray[0].displayCharacter())
+        for (let i=0;i<this.myWordArray.length;i++) {
+            myWord += (this.myWordArray[i].displayCharacter());
         }
         return myWord;
     }

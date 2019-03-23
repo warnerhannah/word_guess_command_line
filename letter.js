@@ -1,32 +1,27 @@
-function Letter(character, guessedLetter) {
+
+function Letter(character, guess) {
     this.character = character;
+    this.guess = guess;
+    this.guessed = false;
 
-    this.value ;
-
-    this.displayCharacter = function () {
-        if (guessedLetter === character) {
-            return character;
-        }
-        else {
-            return "_ ";
-        };
-    }
+    console.log(this.guessed);
 
     this.isCorrect = function () {
-        if (!this.value) {
-            if (guessedLetter === character) {
-                this.value = true;
-                return this.value;
-            }
-            else {
-                this.value = false;
-                return this.value;
-            };
+        if (guess === character) {
+            this.guessed = true;
+        }
+    };
+
+    this.displayCharacter = function() {
+        if (!this.guessed) {
+            return " _ ";
         }
         else {
-            return this.value
-        }
+            return character;
+        };
     }
+    // console.log(this.guessed)
+
 }
 
 module.exports = Letter; 
