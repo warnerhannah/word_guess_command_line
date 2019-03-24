@@ -1,7 +1,6 @@
 
 function Letter(character, guess) {
     this.character = character;
-    this.guess = guess;
     this.guessed = false;
 
     console.log(this.guessed);

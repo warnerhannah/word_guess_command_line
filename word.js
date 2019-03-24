@@ -8,7 +8,7 @@ function Word(word, guess) {
     this.arrayofObjects = function() {
         let wordArray = this.word.split("");
         for (let i=0;i<wordArray.length;i++){
-            let myWordLetter = new Letter(wordArray[i], "x");
+            let myWordLetter = new Letter(wordArray[i], guess);
             this.myWordArray.push(myWordLetter)
         }
 
