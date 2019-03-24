@@ -1,26 +1,28 @@
 
-function Letter(character, guess) {
+function Letter(character) {
     this.character = character;
     this.guessed = false;
 
-    console.log(this.guessed);
+    //console.log(this.guessed);
 
-    this.isCorrect = function () {
-        if (guess === character) {
+    this.isCorrect = function (guess) {
+        if (guess === this.character) {
             this.guessed = true;
+            return true;
+        }
+        else {
+            return false;
         }
     };
 
     this.displayCharacter = function() {
-        if (!this.guessed) {
-            return " _ ";
+        if (this.guessed) {
+            return character + " ";
         }
         else {
-            return character;
+            return " _ ";
         };
     }
-    // console.log(this.guessed)
-
 }
 
 module.exports = Letter; 
