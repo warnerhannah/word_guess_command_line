@@ -25,7 +25,7 @@ function startGame() {
             console.log(dopeLine);            
             console.log("Here is your word!");
             console.log(randomWord);
-            const startArray = new Word (randomWord, "x");
+            const startArray = new Word (randomWord);
             console.log(startArray.displayWord() + "\n");
             console.log(`You have guessed the following letters: ${lettersGuessed} \nYou have ${guesses} guesses remaining.`);
         };
