@@ -1,6 +1,6 @@
 const Letter = require("./letter.js")
 
-function Word(word, guess) {
+function Word(word) {
 
     this.word = word;
     this.myWordArray = [];
@@ -14,7 +14,7 @@ function Word(word, guess) {
 
     }
 
-    this.checkLetter = function() {
+    this.checkLetter = function(guess) {
         for (let i=0;i<this.myWordArray.length;i++) {
             this.arrayofObjects[i].isCorrect();
         }

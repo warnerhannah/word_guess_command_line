@@ -1,12 +1,11 @@
 
-function Letter(character, guess) {
+function Letter(character) {
     this.character = character;
-    this.guess = guess;
     this.guessed = false;
 
     console.log(this.guessed);
 
-    this.isCorrect = function () {
+    this.isCorrect = function (guess) {
         if (guess === character) {
             this.guessed = true;
         }
